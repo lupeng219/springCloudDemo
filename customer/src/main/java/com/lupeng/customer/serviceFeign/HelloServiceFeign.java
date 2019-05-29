@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface HelloServiceFeign {
 
     @RequestMapping(value="/hi", method= RequestMethod.GET)
-    public Object getName(@RequestParam("name") String name);
+    Object home(@RequestParam("name") String name);
 }

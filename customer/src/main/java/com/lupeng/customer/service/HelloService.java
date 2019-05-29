@@ -13,15 +13,15 @@ public class HelloService {
     @Autowired
     RestTemplate restTemplate;
 //当无法调用hiService时，自动调用hiError
-    @HystrixCommand(fallbackMethod = "hiError")
-    public String hiService(String name)
-    {
-       Object forEntity = restTemplate.getForEntity("http://SERVICE-HI/hi?name=" + name, Object.class);
-        return forEntity.toString();
-    }
-    public String hiError(String name){
-
-        return  "hey "+ name + ", there is some problem with hi page";
-    }
+//    @HystrixCommand(fallbackMethod = "hiError")
+//    public String hiService(String name)
+//    {
+//       Object forEntity = restTemplate.getForEntity("http://SERVICE-HI/hi?name=" + name, Object.class);
+//        return forEntity.toString();
+//    }
+//    public String hiError(String name){
+//
+//        return  "hey "+ name + ", there is some problem with hi page";
+//    }
 
 }
