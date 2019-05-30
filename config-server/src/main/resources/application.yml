@@ -1,0 +1,12 @@
+server:
+  port: 4001
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lupeng219/springcloudConfig.git
+          username: 1055663741@qq.com  #账号密码写真实的快一些我觉得，不使用也能访问有点慢
+          password: Lupeng123
