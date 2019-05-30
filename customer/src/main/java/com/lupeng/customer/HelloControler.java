@@ -3,6 +3,7 @@ package com.lupeng.customer;
 
 import com.lupeng.customer.service.HelloService;
 import com.lupeng.customer.serviceFeign.HelloServiceFeign;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,9 +25,13 @@ public class HelloControler {
 //    }
 
     @RequestMapping(value = "/hii")
+    @HystrixCommand(fallbackMethod = "hiError")
     @ResponseBody
     public  Object hii(@RequestParam String name) {
         return  helloServiceFeign.home(name);
     }
 
+    public String hiError(String name){
+        return  "hey "+ name + ", there is some problem with hi page";
+    }
 }

@@ -1,0 +1,21 @@
+server:
+  port: 6001
+spring:
+  application:
+    name: microservice-zull
+eureka:
+  instance:
+      instance-id: microservice-zull6001                        #自定义服务名称信息
+      prefer-ip-address: true                                   #访问路径可以显示IP地址
+  client:
+    serviceUrl:
+      defaultZone: http://114.67.94.23:8761/eureka/
+zuul:
+  routes:
+    mydept.serviceId: SERVICE-RIBBON
+    mydept.path: /provider/**
+info:
+  app.name: microservice-zull
+  company.name: www.lzj.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
