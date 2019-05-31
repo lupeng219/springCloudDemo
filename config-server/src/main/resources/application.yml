@@ -10,3 +10,20 @@ spring:
           uri: https://github.com/lupeng219/springcloudConfig.git
           username: 1055663741@qq.com  #账号密码写真实的快一些我觉得，不使用也能访问有点慢
           password: Lupeng123
+  #rabbitmq:
+  #  host: 123.56.0.233
+  #  port: 5672
+  #  username: guest
+  #  password: guest
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://114.67.94.23:8761/eureka/
+  instance:
+      ip-address: 114.67.94.23
+      preferIpAddress: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -7,7 +7,7 @@ eureka:
       preferIpAddress: true
 
 server:
-  port: 8763
+  port: 8767
 spring:
   application:
     name: service-hi

@@ -1,7 +1,26 @@
-  spring:
-    cloud:
-      config:
-        name: microservice-customer-config-clients #需要从github上读取的资源名，没有yml后缀；microservice-consumer-config-client.yml为已经长传到github的配置文件
-        profile: dev
-        label: master
-        uri: http://114.67.94.23:4001 #config的服务端地址，等config的客户端和服务端启动后，客户端去查找这个指定的config的服务端，通过服务端获取github上配置文件信息
+spring:
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: microservice-config-server
+    bus:
+      trace:
+        enabled: true
+  application:
+      name: microservice-customer-config-clients
+  #连接rabbitmq
+  #rabbitmq:
+  #  host: 123.56.0.233
+   # port: 15672
+    #username: guest
+    #password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://114.67.94.23:8761/eureka
+  instance:
+    ip-address: 114.67.94.23
+    prefer-ip-address: true
