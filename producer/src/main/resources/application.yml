@@ -1,13 +1,4 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://114.67.94.23:8761/eureka/
-  instance:
-      ip-address: 39.97.183.184
-      preferIpAddress: true
-
-server:
-  port: 8767
 spring:
-  application:
-    name: service-hi
+  profiles: dev
+server:
+  port: 8766

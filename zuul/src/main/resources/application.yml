@@ -12,8 +12,8 @@ eureka:
       defaultZone: http://114.67.94.23:8761/eureka/
 zuul:
   routes:
-    mydept.serviceId: SERVICE-RIBBON
-    mydept.path: /provider/**
+    mydept.serviceId: MICROSERVICE-CUSTOMER-CONFIG-CLIENTS
+    mydept.path: /test/**
 info:
   app.name: microservice-zull
   company.name: www.lzj.com

@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: microservice-config-server
+    bus:
+      trace:
+        enabled: true
+  application:
+      name: service-hi
+  #连接rabbitmq
+  #rabbitmq:
+  #  host: 123.56.0.233
+   # port: 15672
+    #username: guest
+    #password: guest
