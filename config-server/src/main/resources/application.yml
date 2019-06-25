@@ -4,6 +4,8 @@ spring:
   application:
     name: microservice-config-server
   cloud:
+    bus:
+      enabled: true
     config:
       server:
         git:
